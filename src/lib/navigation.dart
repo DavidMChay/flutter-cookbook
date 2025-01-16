@@ -4,12 +4,32 @@ void main() {
   runApp(MaterialApp(
     title: 'Navegación',
     initialRoute: '/',
-    routes: {
-      '/': (context) => NavigationExample(),
-      '/second': (context) => SecondScreen(),
-      '/arguments': (context) => ArgumentsScreen(),
-      '/returnData': (context) => ReturnDataScreen(),
-      '/sendData': (context) => SendDataScreen(),
+    onGenerateRoute: (settings) {
+      switch (settings.name) {
+        case '/':
+          return MaterialPageRoute(builder: (context) => NavigationExample());
+        case '/second':
+          return MaterialPageRoute(builder: (context) => SecondScreen());
+        case '/arguments':
+          final args = settings.arguments as String?;
+          return MaterialPageRoute(
+            builder: (context) => ArgumentsScreen(argument: args),
+          );
+        case '/returnData':
+          return MaterialPageRoute(builder: (context) => ReturnDataScreen());
+        case '/sendData':
+          final args = settings.arguments as String?;
+          return MaterialPageRoute(
+            builder: (context) => SendDataScreen(argument: args),
+          );
+        default:
+          return MaterialPageRoute(
+            builder: (context) => Scaffold(
+              appBar: AppBar(title: Text('Error')),
+              body: Center(child: Text('Ruta no encontrada: ${settings.name}')),
+            ),
+          );
+      }
     },
   ));
 }
@@ -38,7 +58,6 @@ class NavigationExample extends StatelessWidget {
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                print('Navegando a /second'); // Mensaje de depuración
                 Navigator.pushNamed(context, '/second');
               },
               child: Text('Navegar con ruta nombrada'),
@@ -128,17 +147,16 @@ class SecondScreen extends StatelessWidget {
 }
 
 class ArgumentsScreen extends StatelessWidget {
-  const ArgumentsScreen({super.key});
+  final String? argument;
+
+  const ArgumentsScreen({super.key, this.argument});
 
   @override
   Widget build(BuildContext context) {
-    final String argument =
-        ModalRoute.of(context)!.settings.arguments as String;
-
     return Scaffold(
       appBar: AppBar(title: Text('Argumentos')),
       body: Center(
-        child: Text(argument),
+        child: Text(argument ?? 'No se recibió ningún argumento'),
       ),
     );
   }
@@ -165,17 +183,16 @@ class ReturnDataScreen extends StatelessWidget {
 }
 
 class SendDataScreen extends StatelessWidget {
-  const SendDataScreen({super.key});
+  final String? argument;
+
+  const SendDataScreen({super.key, this.argument});
 
   @override
   Widget build(BuildContext context) {
-    final String argument =
-        ModalRoute.of(context)!.settings.arguments as String;
-
     return Scaffold(
       appBar: AppBar(title: Text('Enviar Datos')),
       body: Center(
-        child: Text(argument),
+        child: Text(argument ?? 'No se recibieron datos'),
       ),
     );
   }
