@@ -7,6 +7,8 @@ void main() {
 }
 
 class ListsExample extends StatelessWidget {
+  const ListsExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +57,7 @@ class ListsExample extends StatelessWidget {
             ),
           ),
           // Lista horizontal
-          Container(
+          SizedBox(
             height: 100,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -120,7 +122,7 @@ class ListsExample extends StatelessWidget {
             ),
           ),
           // Barra de aplicación flotante sobre una lista
-          Container(
+          SizedBox(
             height: 200,
             child: CustomScrollView(
               slivers: [

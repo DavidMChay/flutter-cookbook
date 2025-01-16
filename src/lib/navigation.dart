@@ -15,6 +15,8 @@ void main() {
 }
 
 class NavigationExample extends StatelessWidget {
+  const NavigationExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,6 +108,8 @@ class NavigationExample extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,6 +128,8 @@ class SecondScreen extends StatelessWidget {
 }
 
 class ArgumentsScreen extends StatelessWidget {
+  const ArgumentsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final String argument =
@@ -139,6 +145,8 @@ class ArgumentsScreen extends StatelessWidget {
 }
 
 class ReturnDataScreen extends StatelessWidget {
+  const ReturnDataScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,6 +165,8 @@ class ReturnDataScreen extends StatelessWidget {
 }
 
 class SendDataScreen extends StatelessWidget {
+  const SendDataScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final String argument =

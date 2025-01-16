@@ -7,6 +7,8 @@ void main() {
 }
 
 class DesignExample extends StatelessWidget {
+  const DesignExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,6 +86,8 @@ class DesignExample extends StatelessWidget {
 
 // Subpantallas para cada funcionalidad
 class ExportFontsExample extends StatelessWidget {
+  const ExportFontsExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,6 +100,8 @@ class ExportFontsExample extends StatelessWidget {
 }
 
 class DrawerExample extends StatelessWidget {
+  const DrawerExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,8 +110,8 @@ class DrawerExample extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              child: Text('Encabezado del cajón'),
               decoration: BoxDecoration(color: Colors.blue),
+              child: Text('Encabezado del cajón'),
             ),
             ListTile(
               title: Text('Opción 1'),
@@ -130,6 +136,8 @@ class DrawerExample extends StatelessWidget {
 }
 
 class OrientationExample extends StatelessWidget {
+  const OrientationExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,6 +159,8 @@ class OrientationExample extends StatelessWidget {
 }
 
 class TabsExample extends StatelessWidget {
+  const TabsExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -179,6 +189,8 @@ class TabsExample extends StatelessWidget {
 }
 
 class CustomFontExample extends StatelessWidget {
+  const CustomFontExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -197,6 +209,8 @@ class CustomFontExample extends StatelessWidget {
 }
 
 class SnackBarExample extends StatelessWidget {
+  const SnackBarExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -216,6 +230,8 @@ class SnackBarExample extends StatelessWidget {
 }
 
 class ThemesExample extends StatelessWidget {
+  const ThemesExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

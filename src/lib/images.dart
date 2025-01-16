@@ -7,6 +7,8 @@ void main() {
 }
 
 class ImagesExample extends StatelessWidget {
+  const ImagesExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
