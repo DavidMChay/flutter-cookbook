@@ -87,3 +87,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  
+  fonts:
+    - family: MiFuente  # Nombre de la familia de fuentes
+      fonts:
+        - asset: assets/fonts/TiltWarp-Regular.ttf  # Ruta al archivo de la fuente
+
+  assets:
+    - assets/placeholder.png
