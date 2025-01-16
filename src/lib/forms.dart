@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: FormsExample(),
-  ));
-}
-
 class FormsExample extends StatefulWidget {
   const FormsExample({super.key});
 

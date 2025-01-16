@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: ImagesExample(),
-  ));
-}
-
 class ImagesExample extends StatelessWidget {
   const ImagesExample({super.key});
 

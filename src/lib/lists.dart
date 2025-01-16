@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: ListsExample(),
-  ));
-}
-
 class ListsExample extends StatelessWidget {
   const ListsExample({super.key});
 

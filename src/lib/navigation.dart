@@ -1,39 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Navegación',
-    initialRoute: '/',
-    onGenerateRoute: (settings) {
-      switch (settings.name) {
-        case '/':
-          return MaterialPageRoute(builder: (context) => NavigationExample());
-        case '/second':
-          return MaterialPageRoute(builder: (context) => SecondScreen());
-        case '/arguments':
-          final args = settings.arguments as String?;
-          return MaterialPageRoute(
-            builder: (context) => ArgumentsScreen(argument: args),
-          );
-        case '/returnData':
-          return MaterialPageRoute(builder: (context) => ReturnDataScreen());
-        case '/sendData':
-          final args = settings.arguments as String?;
-          return MaterialPageRoute(
-            builder: (context) => SendDataScreen(argument: args),
-          );
-        default:
-          return MaterialPageRoute(
-            builder: (context) => Scaffold(
-              appBar: AppBar(title: Text('Error')),
-              body: Center(child: Text('Ruta no encontrada: ${settings.name}')),
-            ),
-          );
-      }
-    },
-  ));
-}
-
 class NavigationExample extends StatelessWidget {
   const NavigationExample({super.key});
 

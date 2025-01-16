@@ -18,6 +18,16 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Cookbook',
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       home: MainMenu(),
+      routes: {
+        '/second': (context) => SecondScreen(),
+        '/arguments': (context) => ArgumentsScreen(
+              argument: ModalRoute.of(context)!.settings.arguments as String?,
+            ),
+        '/returnData': (context) => ReturnDataScreen(),
+        '/sendData': (context) => SendDataScreen(
+              argument: ModalRoute.of(context)!.settings.arguments as String?,
+            ),
+      },
     );
   }
 }
