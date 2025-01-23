@@ -5,6 +5,7 @@ import 'lists.dart'; // Importamos el archivo de listas
 import 'forms.dart'; // Importamos el archivo de formularios
 import 'navigation.dart'; // Importamos el archivo de navegación
 import 'network.dart'; // Importamos el archivo de networking
+import 'persistence.dart'; // Importamos el archivo de persistencia
 
 void main() {
   runApp(MyApp());
@@ -93,6 +94,15 @@ class MainMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NetworkExample()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Persistencia'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PersistenceExample()),
               );
             },
           ),
