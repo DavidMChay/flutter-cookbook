@@ -6,6 +6,8 @@ import 'forms.dart'; // Importamos el archivo de formularios
 import 'navigation.dart'; // Importamos el archivo de navegación
 import 'network.dart'; // Importamos el archivo de networking
 import 'persistence.dart'; // Importamos el archivo de persistencia
+import 'animation.dart'; // Importamos el archivo de animaciones
+import 'regconapi.dart'; // Importamos el archivo de RegCon API
 
 void main() {
   runApp(MyApp());
@@ -103,6 +105,24 @@ class MainMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PersistenceExample()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Animaciones'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AnimationExample()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('RegCon API Network'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RegConApiExample()),
               );
             },
           ),
